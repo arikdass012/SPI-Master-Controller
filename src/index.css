@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  /* Redefined for Clean Minimalism (Light Theme) */
+  --color-vlsi-dark: #fcfcfc; /* Crisp minimal light background */
+  --color-vlsi-card: #ffffff; /* Elegant white cards */
+  --color-vlsi-accent: #2563eb; /* High luxury royal blue */
+  --color-vlsi-amber: #d97706; /* High contrast amber on light background */
+  --color-vlsi-emerald: #16a34a; /* High contrast green on light background */
+  --color-vlsi-rose: #dc2626; /* High contrast red */
+  --color-vlsi-border: #e5e7eb; /* Soft classic border border-gray-200 */
+}
+
+/* Base scrollbar styling for a premium feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f9fafb;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+body {
+  background-color: var(--color-vlsi-dark);
+  color: #111827;
+  font-family: var(--font-sans);
+}
+
+/* Accent overrides to support any embedded elements seamlessly */
+pre {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border: 1px solid #e2e8f0 !important;
+}

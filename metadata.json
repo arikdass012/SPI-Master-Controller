@@ -1,0 +1,6 @@
+{
+  "name": "VLSI SPI Master Controller",
+  "description": "An interactive digital design portfolio for a configurable SPI Master Controller. View synthesizable Verilog/SystemVerilog RTL, interactive timing diagrams, animated FSM states, live waveform simulation, and ASIC/FPGA resource analyses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
