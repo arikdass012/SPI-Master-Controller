@@ -3,20 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ShieldCheck, Zap, Info, Play, ToggleLeft, Layers, VolumeX, Eye } from "lucide-react";
 
 export default function AsicGuide() {
   const [asyncReset, setAsyncReset] = useState<boolean>(true); // Asymmetric reset button state
   const [clockStep, setClockStep] = useState<number>(0); // Clock pulses step
+  const [sync_stage_1, setStage1] = useState<number>(0);
+  const [sync_stage_2, setStage2] = useState<number>(0);
 
   // Reset synchronizer stages
   const rst_n_raw = asyncReset ? 0 : 1;
-  const sync_stage_1 = rst_n_raw;
-  const sync_stage_2 = clockStep >= 1 ? sync_stage_1 : 0;
+
+  useEffect(() => {
+    if (asyncReset) {
+      setStage1(0);
+      setStage2(0);
+      setClockStep(0);
+    }
+  }, [asyncReset]);
   
   const handleClkTick = () => {
-    setClockStep(prev => (prev + 1) % 3);
+    if (asyncReset) return;
+    setClockStep(prev => prev + 1);
+    setStage2(sync_stage_1);
+    setStage1(1);
   };
 
   return (
